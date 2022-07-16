@@ -14,7 +14,7 @@ class User(Base):
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
-    email = Column(String(350), nullable=False)
+     email = Column(String(350), nullable=False)
     fav_planets = relationship('Fav_planets', backref='user', lazy=True)
     fav_characters = relationship('Fav_characters', backref='user', lazy=True)
 
@@ -59,7 +59,7 @@ class Fav_planets(Base):
 
 class Fav_characters(Base):
     __tablename__ = 'fav_characters'
-    id = Column(Integer, primary_key=True)
+      id = Column(Integer, primary_key=True)
     user_id = Column(Integer,ForeignKey('user.id'))
     characters_id = Column(Integer, ForeignKey('characters.id')) 
 
